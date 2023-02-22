@@ -14,16 +14,3 @@ permalink: posts/
     </div>
   {% endfor %}
 {% endblock %}
-
-{% extends "layouts/base.html" %}
-{% block content %}
-  {% for post in collections.post %}
-    <div class="post">
-      <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}"/>
-      <p>{{ post.data.postTitle }}</p>
-      <p>{{ post.data.author }} | {{ post.data.date }}</p>
-      <p>{{ post.data.postDescription }}</p>
-      <a href="{{ post.url }}">Read More</a>
-    </div>
-  {% endfor %}
-{% endblock %}
