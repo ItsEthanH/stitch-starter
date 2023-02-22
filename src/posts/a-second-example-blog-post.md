@@ -5,7 +5,7 @@ author: John Doe
 date: 2023-02-20T19:54:00.702Z
 tags:
   - post
-image: /src/images/posts/blog-test.jpg
+image: https://source.unsplash.com/1527pjeb6jg.jpg
 imageAlt: Alt text for an image description
 ---
 
