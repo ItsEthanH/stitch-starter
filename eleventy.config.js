@@ -1,5 +1,6 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add('./src/_kit/**/*');
+  eleventyConfig.addPassthroughCopy('./src/admin');
 
   eleventyConfig.addPassthroughCopy('./src/assets');
   eleventyConfig.addPassthroughCopy('./src/images');
