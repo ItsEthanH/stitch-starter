@@ -5,7 +5,7 @@ author: John Doe
 date: 2023-02-20T19:54:00.702Z
 tags:
   - post
-image: https://source.unsplash.com/1527pjeb6jg.jpg
+image: /src/images/posts/blog-test.jpg
 imageAlt: Alt text for an image description
 ---
 
@@ -48,9 +48,6 @@ reprehenderit quisquam cumque aperiam, illum non ut molestias deleniti mollitia?
 Modi perferendis veniam repellendus, minus quis saepe, adipisci repellat labore illum perspiciatis vitae quo harum?
 Perspiciatis officiis nemo doloremque, commodi eos illum tempora enim deleniti qui consequatur ratione labore
 perferendis.
-
-Debitis, ullam minus ab quae nulla repudiandae. Dicta culpa recusandae animi repudiandae, facilis nesciunt, porro nobis
-quibusdam error modi ipsam voluptatibus sapiente a pariatur tempora corporis dolorum velit exercitationem laborum?
 
 Debitis, ullam minus ab quae nulla repudiandae. Dicta culpa recusandae animi repudiandae, facilis nesciunt, porro nobis
 quibusdam error modi ipsam voluptatibus sapiente a pariatur tempora corporis dolorum velit exercitationem laborum?
