@@ -198,6 +198,13 @@ you make any modifications
   header {
     font-family: var(--bodyFontFamily);
   }
+  header a {
+    color: var(--bodyTextColor);
+  }
+  header a:hover,
+  header a.active {
+    color: var(--primary);
+  }
   header .skip-link {
     background: var(--primary);
     color: #fff;
@@ -281,10 +288,6 @@ you make any modifications
   }
   header li:nth-of-type(5) {
     transition-delay: 0.5s;
-  }
-  header a.active,
-  header a:hover {
-    color: var(--primary);
   }
   header #hamburger {
     position: absolute;
@@ -431,12 +434,8 @@ you make any modifications
   }
   header a {
     position: relative;
-    color: var(--bodyTextColor);
     transition: color 0.3s ease;
-  }
-  header a:hover,
-  header a.active {
-    color: var(--primary);
+    text-decoration: none;
   }
   header #hamburger {
     display: none;
