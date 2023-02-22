@@ -1,4 +1,15 @@
-<!-- REQUIREMENT - pages -->
+<!-- REQUIREMENT - pages
+
+---
+eleventyComputed:
+  title: {{postTitle}}
+  description: {{ postDescription }}
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+
+-->
 
 {% extends "layouts/base.html" %}
 {% block content %}
