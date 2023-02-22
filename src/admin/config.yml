@@ -1,0 +1,29 @@
+# use "npx netlify-cms-proxy-server" to test the CMS
+
+backend:
+  name: git-gateway
+  branch: master
+
+local_backend: true
+
+# set a URL (not file path) to a logo for a customised CMS
+# logo_url:
+
+# needed for the CMS to work, but unnecessary for this setup, as we use media_folder on the image widget to get the CMS to work with eleventy image
+media_folder: 'public/images/posts'
+
+collections:
+  - name: 'posts'
+    label: 'Posts'
+    folder: 'src/posts'
+    create: true
+    slug: '{{postTitle}}'
+    fields:
+      - { label: 'Post Title', name: 'postTitle', widget: 'string' }
+      - { label: 'Post Description', name: 'postDescription', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] }
+      - { label: 'Featured Image', name: 'image', widget: 'image', choose_url: false, media_folder: /src/images/posts }
+      - { label: 'Image Caption', name: 'imageAlt', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
