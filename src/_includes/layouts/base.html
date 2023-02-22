@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- if you're using one of the style/ branches, delete the below style link - all styles are included in their
+    respective languages -->
+    <link rel="stylesheet" href="/assets/starter-styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Stitch Starter Kit</title>
+    <script src="/assets/js/nav.js" defer></script>
+  </head>
+  <body>
+    {% include "components/header.html" %}
+    <main>
+      {% block content %}
+      {% endblock%}
+    </main>
+    {% include "components/footer.html" %}
+  </body>
+</html>
