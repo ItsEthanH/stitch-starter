@@ -1,5 +1,7 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets');
+  eleventyConfig.addPassthroughCopy('./src/images'); // DELETE IF USING feature/image-optimisation
+
   eleventyConfig.addWatchTarget('./src/assets/*');
 
   return {

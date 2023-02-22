@@ -1,1 +1,0 @@
-Use https://realfavicongenerator.net/ to generate and download your favicons to put into base.html
