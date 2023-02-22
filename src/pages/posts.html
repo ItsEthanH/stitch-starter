@@ -1,0 +1,23 @@
+---
+title: 'Posts'
+description: 'SAMPLE DESCRIPTION THAT NEEDS TO BE CHANGED'
+preload: '/'
+permalink: 'posts/'
+eleventyNavigation:
+  key: Posts
+  order: 6
+---
+
+{% extends "layouts/base.html" %}
+{% block content %}
+  <h1>The {{ title }} page</h1>
+  {% for post in collections.post %}
+    <div class="post">
+      {% image post.data.image, post.data.imageAlt, '100vw' %}
+      <p>{{ post.data.postTitle }}</p>
+      <p>{{ post.data.author }} | {{ post.data.date|formatDate }}</p>
+      <p>{{ post.data.postDescription }}</p>
+      <a href="{{ post.url }}">Read More</a>
+    </div>
+  {% endfor %}
+{% endblock %}
