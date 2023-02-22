@@ -182,11 +182,11 @@
 }
 
 /*
-because of the amount of overlapping content if a header was built the
-traditional way, using (min-width: 0) and (min-width: 64em), this header has
-it's mobile and desktop headers built separately. there's a few shared styles
-for the skip-link and fonts, but otherwise it's split. bear this in mind if
-you make any modifications
+due to the large amount of overlapping content, a separate mobile and desktop
+media query is used. it is more DRY to do it this way than to overwrite all the
+conflicting styles. bear this in mind if you make modifications.
+
+however, the skip link, anchor and font styles are shared for consistency.
 */
 
 /*-- -------------------------- -->
