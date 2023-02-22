@@ -1,14 +1,22 @@
 ---
-permalink: posts/
+title: 'Posts'
+description: 'SAMPLE DESCRIPTION THAT NEEDS TO BE CHANGED'
+preload: '/'
+permalink: 'posts/'
+eleventyNavigation:
+  key: Posts
+  order: 6
 ---
 
 {% extends "layouts/base.html" %}
 {% block content %}
   {% for post in collections.post %}
     <div class="post">
-      <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}"/>
+      <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" />
       <p>{{ post.data.postTitle }}</p>
-      <p>{{ post.data.author }} | {{ post.data.date }}</p>
+      <p>{{ post.data.author }}
+        |
+        {{ post.data.date }}</p>
       <p>{{ post.data.postDescription }}</p>
       <a href="{{ post.url }}">Read More</a>
     </div>
