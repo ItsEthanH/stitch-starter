@@ -1,0 +1,2 @@
+for the sake of consistency between all features in the kit, all images should go in here.
+this is to allow the CMS and image optimisation features to play nicely together
