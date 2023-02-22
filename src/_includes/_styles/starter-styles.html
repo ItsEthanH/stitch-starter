@@ -1,0 +1,641 @@
+<style>
+  /*        CSS Reset - credited below         */
+  /* ----------------------------------------- */
+  /* http://meyerweb.com/eric/tools/css/reset/ */
+  /*             v2.0 | 20110126               */
+  /*        License: none (public domain)      */
+  /* ----------------------------------------- */
+  @media only screen and (min-width: 0) {
+    a,
+    abbr,
+    acronym,
+    address,
+    applet,
+    article,
+    aside,
+    audio,
+    b,
+    big,
+    blockquote,
+    body,
+    canvas,
+    caption,
+    center,
+    cite,
+    code,
+    dd,
+    del,
+    details,
+    dfn,
+    div,
+    dl,
+    dt,
+    em,
+    embed,
+    fieldset,
+    figcaption,
+    figure,
+    footer,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    header,
+    hgroup,
+    html,
+    i,
+    iframe,
+    img,
+    ins,
+    kbd,
+    label,
+    legend,
+    li,
+    mark,
+    menu,
+    nav,
+    object,
+    ol,
+    output,
+    p,
+    pre,
+    q,
+    ruby,
+    s,
+    samp,
+    section,
+    small,
+    span,
+    strike,
+    strong,
+    sub,
+    summary,
+    sup,
+    table,
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    time,
+    tr,
+    tt,
+    u,
+    ul,
+    var,
+    video {
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    *,
+    *:after,
+    *:before {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--bodyFontFamily);
+    }
+
+    body {
+      line-height: 1.5;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    blockquote,
+    q {
+      quotes: none;
+    }
+
+    blockquote:after,
+    blockquote:before,
+    q:after,
+    q:before {
+      content: '';
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  /*- -------------------------- */
+  /*-      Custom Properties     */
+  /*- -------------------------- */
+  :root {
+    --primary: #14142b;
+    --primaryLight: #4598f4;
+
+    --secondary: #89796a;
+    --secondaryLight: #d6d0cc;
+
+    --headerColor: #252422;
+    --bodyTextColor: #fafbfc;
+    --label: #b4b2c7;
+
+    --headerFontFamily: 'Arial Black';
+    --bodyFontFamily: 'Roboto', 'Arial', sans-serif;
+
+    --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
+    --titleFontSize: clamp(2.43rem, 4.31vw, 3.82rem);
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --subheaderFontSize: clamp(1.69rem, 2.44vw, 2.44rem);
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    --bodyFontSize: clamp(0.875rem, 2.5vw, 1rem);
+
+    --dark: #121212;
+    --medium: #282828;
+    --accent: #404040;
+    --bodyTextColorWhite: #fafbfc;
+
+    --headerScrolledColour: rgb(230, 230, 230);
+  }
+
+  /* due to the large amount of overlapping content, a separate mobile and desktop media query is used. it is more DRY to
+   do it this way than to overwrite all the conflicting styles. bear this in mind if you make modifications.
+
+   however, the skip link, anchor and font styles are shared for consistency. */
+
+  /*- -------------------------- */
+  /*-           Header           */
+  /*- -------------------------- */
+
+  /* Shared Styles */
+  @media only screen and (min-width: 0) {
+    header {
+      font-family: var(--bodyFontFamily);
+    }
+    header a {
+      color: var(--bodyTextColor);
+    }
+    header a.active,
+    header a:hover {
+      color: var(--primary);
+    }
+    header .skip-link {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 700;
+      padding: 0.5em 1em;
+      position: absolute;
+      transform: translateY(-500%);
+      transition: transform 0.3s;
+      z-index: 10;
+    }
+    header .skip-link:focus {
+      transform: translateY(125%);
+    }
+  }
+
+  /* Mobile Only - 360px */
+  @media only screen and (max-width: 1023px) {
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: auto;
+      background: white;
+      box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+      z-index: 2;
+    }
+    header .container {
+      position: relative;
+      padding: 1.5rem;
+      z-index: 3;
+    }
+    header .left {
+      left: 1.5rem;
+    }
+    header .logo {
+      display: inline-block;
+      height: 100%;
+      width: auto;
+      max-width: 15rem;
+    }
+    header nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 0;
+      padding-top: 0;
+      box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+      background-color: #fff;
+      transition: width 0.3s;
+      z-index: 4;
+    }
+    header ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+      height: 100%;
+      padding-top: 6rem;
+      padding-bottom: 2rem;
+      padding-right: 1.5rem;
+    }
+    header li {
+      opacity: 0;
+      text-align: right;
+      transform-style: preserve-3d;
+      transform: translateY(-7 / 16em) rotateX(0deg);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    header li:nth-of-type(1) {
+      transition-delay: 0.1s;
+    }
+    header li:nth-of-type(2) {
+      transition-delay: 0.2s;
+    }
+    header li:nth-of-type(3) {
+      transition-delay: 0.3s;
+    }
+    header li:nth-of-type(4) {
+      transition-delay: 0.4s;
+    }
+    header li:nth-of-type(5) {
+      transition-delay: 0.5s;
+    }
+    header #hamburger {
+      position: absolute;
+      top: 50%;
+      right: 0.5rem;
+      display: block;
+      border: none;
+      padding: 0;
+      height: 3rem;
+      width: 3rem;
+      background: transparent;
+      transform: translateY(-50%);
+      transition: top 0.3s;
+      z-index: 4;
+      cursor: pointer;
+    }
+    header #hamburger span {
+      position: absolute;
+      display: block;
+      left: 50%;
+      height: 2px;
+      width: 1.5rem;
+      background-color: #000;
+      transform: translateX(-50%);
+    }
+    header #hamburger span:after,
+    header #hamburger span:before {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: #000;
+      opacity: 1;
+    }
+    header #hamburger span:before {
+      top: -6px;
+      transition: width 0.3s, left 0.3s, top 0.3s, transform 0.5s;
+    }
+    header #hamburger span:after {
+      top: 6px;
+      transition: width 0.3s, left 0.3s, top 0.3s, transform 0.3s;
+    }
+    header #backdrop {
+      display: none;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.5);
+      height: 100vh;
+      width: 100vw;
+    }
+    body.open {
+      overflow-y: hidden;
+    }
+    body.open header {
+      overflow-y: scroll;
+    }
+    body.open header #hamburger span {
+      background-color: transparent;
+      transition: background-color 0.3s;
+    }
+    body.open header #hamburger span:after,
+    body.open header #hamburger span:before {
+      top: 50%;
+      left: 50%;
+      width: 100%;
+    }
+    body.open header #hamburger span:before {
+      transform: translate(-50%, -50%) rotate(225deg);
+    }
+    body.open header #hamburger span:after {
+      transform: translate(-50%, -50%) rotate(-225deg);
+    }
+    body.open header nav {
+      width: 15.625rem;
+    }
+    body.open header nav ul {
+      overflow-y: scroll;
+    }
+    body.open header nav ul li {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+    body.open header nav:before {
+      content: '';
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      right: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      transition: 0;
+    }
+    body.open.scrolled {
+      background-color: var(--headerScrolledColour);
+    }
+  }
+
+  /* Desktop Only - 1024px */
+  @media only screen and (min-width: 64em) {
+    header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      height: 7rem;
+      padding: 0;
+      transition: 0.3s;
+      box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+      background: white;
+      z-index: 2;
+    }
+    header .container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      max-width: 75rem;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header .skip-link {
+      left: 2rem;
+    }
+    header .logo {
+      display: inline-block;
+      width: auto;
+      height: 100%;
+      max-width: 14rem;
+      margin-right: auto;
+    }
+    header ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0;
+    }
+    header li {
+      margin-left: 1.875rem;
+      padding-top: 0.1875em;
+      list-style: none;
+    }
+    header a {
+      position: relative;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    header #hamburger {
+      display: none;
+    }
+    header.scrolled {
+      background-color: var(--headerScrolledColour);
+    }
+  }
+
+  /*- -------------------------- */
+  /*-          Footer            */
+  /*- -------------------------- */
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0) {
+    #cs-footer {
+      font-family: var(--bodyFontFamily);
+      /* 40px - 100px top and bottom */
+      padding: clamp(2.5em, 7.9vw, 6.25em) 1em;
+      background-color: #14142b;
+      /* Navigation Links */
+      /* Contact Links */
+      /* Bottom Credits and Social */
+    }
+    #cs-footer .cs-container {
+      width: 100%;
+      /* reset on tablet */
+      max-width: 34.375em;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    #cs-footer .cs-logo-group {
+      /* takes up all the space, lets the other ul's wrap below it */
+      width: 100%;
+    }
+    #cs-footer .cs-logo {
+      /* 210px - 240px */
+      width: clamp(13.125em, 8vw, 15em);
+      height: auto;
+      display: block;
+      /* 28px - 44px */
+      margin-bottom: clamp(1.75em, 4.17vw, 2.75em);
+    }
+    #cs-footer .cs-text {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.7vw, 1rem);
+      margin: 0 0 2rem;
+      max-width: 20.5rem;
+      color: var(--bodyTextColor);
+    }
+    #cs-footer .cs-logo-img {
+      width: 100%;
+      height: auto;
+    }
+    #cs-footer .cs-nav {
+      padding: 0;
+      margin: 0;
+    }
+    #cs-footer .cs-nav-li {
+      list-style: none;
+      margin-bottom: 1.25rem;
+    }
+    #cs-footer .cs-nav-li:last-of-type {
+      margin-bottom: 0;
+    }
+    #cs-footer .cs-header {
+      font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+      line-height: 1.5em;
+      font-weight: 700;
+      color: var(--bodyTextColor);
+    }
+    #cs-footer .cs-nav-link {
+      font-size: 1rem;
+      text-decoration: none;
+      line-height: 1.5em;
+      color: var(--bodyTextColor);
+      position: relative;
+    }
+    #cs-footer .cs-nav-link:before {
+      /* underline */
+      content: '';
+      width: 0;
+      height: 0.125rem;
+      background: var(--bodyTextColor);
+      opacity: 1;
+      position: absolute;
+      display: block;
+      bottom: -0.125rem;
+      left: 0;
+      transition: width 0.3s;
+    }
+    #cs-footer .cs-nav-link:hover:before {
+      width: 100%;
+    }
+    #cs-footer .cs-contact {
+      margin: 2.25em 0 0;
+      padding: 1.5em 0 1.75em;
+      width: 100%;
+      border-top: 1px solid #7d799c;
+      border-bottom: 1px solid #7d799c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #cs-footer .cs-contact-li {
+      list-style: none;
+      margin-bottom: 0.75em;
+    }
+    #cs-footer .cs-contact-li:last-of-type {
+      margin-bottom: 0;
+    }
+    #cs-footer .cs-contact-link {
+      /* 14px - 20px */
+      font-size: clamp(0.875rem, 1.57vw, 1.25rem);
+      text-decoration: none;
+      font-weight: 700;
+      line-height: 1.5em;
+      text-align: center;
+      color: var(--bodyTextColor);
+      display: inline-block;
+    }
+    #cs-footer .cs-contact-link:hover {
+      text-decoration: underline;
+    }
+    #cs-footer .cs-address {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.57vw, 1rem);
+    }
+    #cs-footer .cs-bottom {
+      /* 20px - 28px */
+      padding-top: clamp(1.25em, 2vw, 1.75em);
+      width: 100%;
+      display: flex;
+      /* set everyone to position on the left side */
+      justify-content: flex-start;
+      align-items: center;
+      /* These two are Needed to make 3D transforms look 3D on a child */
+      perspective: 700px;
+      transform-style: preserve-3d;
+    }
+    #cs-footer .cs-copyright {
+      font-size: 0.9375rem;
+      text-align: center;
+      color: var(--label);
+      display: block;
+      /* margin right auto on a flexbox pushes everyone else to the right */
+      margin: 0 auto 0 0;
+    }
+    #cs-footer .cs-social-link {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-left: 0.75rem;
+      background-color: #4e4b66;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    #cs-footer .cs-social-link:hover {
+      background-color: #1a1a1a;
+      transform: translateY(-0.1875rem);
+    }
+    #cs-footer .cs-social-img {
+      height: 0.6875em;
+      width: auto;
+      display: block;
+    }
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48em) {
+    #cs-footer .cs-container {
+      max-width: 80em;
+    }
+    #cs-footer .cs-logo-group {
+      width: auto;
+      /* 224px - 305px */
+      width: clamp(14em, 23vw, 19.0625em);
+    }
+    #cs-footer .cs-nav {
+      /* 4px - 12px */
+      margin-top: clamp(0.25em, 0.6vw, 0.75em);
+    }
+    #cs-footer .cs-contact {
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: none;
+    }
+    #cs-footer .cs-contact-li {
+      margin: 0;
+    }
+  }
+
+  /* so the footer drops to the bottom */
+  main {
+    min-height: 70vh;
+  }
+</style>
