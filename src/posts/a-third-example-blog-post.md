@@ -1,37 +1,39 @@
 ---
 postTitle: A third example blog post
-postDescription: As you can see, there is a lot of blank space to the right of
-  the desktop view. Perhaps you could use the tags to make a "featured" section?
+postDescription:
+  As you can see, there is a lot of blank space to the right of the desktop view. Perhaps you could use the tags to make
+  a "featured" section?
 author: John Doe
 date: 2023-02-20T19:54:24.710Z
 tags:
   - post
-image: /src/images/posts/blog-test.jpg
+image: https://source.unsplash.com/1527pjeb6jg.jpg
 imageAlt: Alt text for an image description
 ---
+
 # Heading 1
 
 ## Heading 2
 
-## Heading 3
+### Heading 3
 
-## Heading 4
+#### Heading 4
 
-## Heading 5
+##### Heading 5
 
-## Heading 6
+###### Heading 6
 
 **Some bolded text**
 
-*Some italicised text*
+_Some italicised text_
 
 `Monospaced text`
 
 > A quote - Some wise guy
 
-* Item 1
-* Item 2
-* Item 3
+- Item 1
+- Item 2
+- Item 3
 
 1. Numbered item 1
 2. Numbered item 2
