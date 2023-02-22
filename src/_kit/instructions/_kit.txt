@@ -9,14 +9,14 @@ and delete the .txt's as you go along. When the folder is clear, the kit is read
 
 2. Run npm install
 
-3. Handle the _includes/_styles folder
+3. Handle the _kit/styles folder
     - If you're using one of the Stitch Starter's style/ branches, this folder can just be deleted
     - If you're not using one of the Stitch Starter's style/ branches, we offer CSS, LESS and SASS versions of all
       files in _styles. Feel free to use the styles you need
 
 4. Delete the {% include ... %}'s for the starting styles from _includes/layouts/base.html
 
-5. Delete _instructions/_kit.txt and move on to the next one!
+5. Delete this file and move on to the next one!
  
 
 OTHER HELPFUL THINGS WHEN starting
