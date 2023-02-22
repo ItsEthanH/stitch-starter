@@ -1,5 +1,5 @@
-{#
-REQUIREMENT - pages/*
+<!-- REQUIREMENT - pages
+
 ---
 eleventyComputed:
   title: {{postTitle}}
@@ -8,11 +8,13 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-#}
+
+-->
+
 {% extends "layouts/base.html" %}
 {% block content %}
   <h2>{{ postTitle }}</h2>
-  <p>{{ author }} | {{ date | formatDate }}</p>
-  {% image image, imageAlt, '100vw' %}
+  <p>{{ author }} | {{ date }}</p>
+  <img src="{{image}}" alt="{{imageAlt}}">
   {{ content | safe }}
 {% endblock %}
