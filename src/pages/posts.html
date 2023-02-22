@@ -1,37 +1,16 @@
+---
+permalink: posts/
+---
+
 {% extends "layouts/base.html" %}
 {% block content %}
-  <h1>The {{ title }} page</h1>
   {% for post in collections.post %}
     <div class="post">
-      <img src="{{ post.data.iamge }}" alt="{{ post.data.imageAlt }}"/>
+      <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}"/>
       <p>{{ post.data.postTitle }}</p>
-      <p>{{ post.data.author }} | {{ post.data.date|formatDate }}</p>
+      <p>{{ post.data.author }} | {{ post.data.date }}</p>
       <p>{{ post.data.postDescription }}</p>
       <a href="{{ post.url }}">Read More</a>
     </div>
   {% endfor %}
 {% endblock %}
-{# optional styles  #}
-<style>
-  .post {
-    max-width: 40rem;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 1rem 0;
-  }
-  .post p,
-  .post a {
-    margin: 1rem;
-  }
-  .post a {
-    text-decoration: none;
-  }
-  .post p:nth-of-type(1) {
-    font-size: var(--subheaderFontSize);
-  }
-  .post p:nth-of-type(2) {
-    font-size: var(--topperFontSize);
-    font-style: italic;
-  }
-</style>
