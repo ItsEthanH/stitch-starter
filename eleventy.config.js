@@ -1,8 +1,12 @@
+const optimiseImage = require('./src/_11ty/shortcodes/optimiseImage').optimiseImage;
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets');
   eleventyConfig.addPassthroughCopy('./src/images'); // DELETE IF USING feature/image-optimisation
 
   eleventyConfig.addWatchTarget('./src/assets/*');
+
+  eleventyConfig.addShortcode('image', optimiseImage);
 
   return {
     // default is to use nunjucks to render everything - feel free to change this to whatever you want

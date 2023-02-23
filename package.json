@@ -5,6 +5,7 @@
   "main": "eleventy.config.js",
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-img": "^3.0.0",
     "a-sync-waterfall": "^1.0.1",
     "acorn": "^7.4.1",
     "ansi-styles": "^4.3.0",
