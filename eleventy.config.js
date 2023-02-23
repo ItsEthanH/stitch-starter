@@ -1,3 +1,5 @@
+const optimiseImage = require('./src/_11ty/shortcodes/optimiseImage').optimiseImage;
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add('./src/_kit/**/*');
 
@@ -8,6 +10,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setServerOptions({
     watch: ['**/*.js', '**/*.css', '**/*.sass', '**/*.less'],
   });
+
+  eleventyConfig.addShortcode('image', optimiseImage);
 
   return {
     // default is to use nunjucks to render everything - feel free to change this to whatever you want
