@@ -1,0 +1,20 @@
+{
+  "name": "CodeStitch",
+  "email": "info@codestitch.com",
+  "phone": "123-456-7890",
+  "phoneFormatted": "(123) 456 7890",
+  "address": {
+    "lineOne": "321 Parkland Drive",
+    "lineTwo": "",
+    "city": "Oak Harbor",
+    "state": "WA",
+    "zip": "98101",
+    "mapLink": "https://goo.gl/maps/NwXMEL2bMDrwuZCd8"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com",
+    "instagram": "https://www.instagram.com",
+    "google": "https://www.google.com"
+  },
+  "domain": "www.codestitch.com"
+}
