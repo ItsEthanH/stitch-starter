@@ -13,7 +13,14 @@
     </a>
     <nav aria-label="header navigation">
       <ul>
-        <li><a class="active" href="/">Home</a></li>
+        {% set navPages = collections.all | eleventyNavigation %}
+        {%- for entry in navPages %}
+          <li>
+            <a {% if entry.url == page.url %} class="active" {% endif %} href="{{ entry.url }}">
+              {{ entry.key }}
+            </a>
+          </li>
+        {%- endfor %}
       </ul>
     </nav>
     <button id="hamburger" aria-hidden="true">
