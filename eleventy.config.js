@@ -1,8 +1,11 @@
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets');
   eleventyConfig.addPassthroughCopy('./src/images'); // DELETE IF USING feature/image-optimisation
 
   eleventyConfig.addWatchTarget('./src/assets/*');
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   return {
     // default is to use nunjucks to render everything - feel free to change this to whatever you want

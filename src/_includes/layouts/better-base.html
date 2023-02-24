@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- standard <head> stuff -->
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <link rel="canonical" href="https://{{ client.domain }}{{ page.url }}"/>
+    <meta name="description" content="{{ description }}"/>
+    <meta name="keywords" content=""/>
+
+    <!-- display when sharing links -->
+    <meta property="og:title" content="{{ client.name }} | {{ title }} | {{ client.address.city }}, {{ client.address.county }}"/>
+    <meta property="og:description" content="{{ description }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://{{ client.domain }}{{ page.url }}"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:image:secure_url" content=""/>
+
+    <!-- preload based on page frontmatter -->
+    <link rel="preload" as="image" href="/assets/images/{{ preload }}"/>
+
+    <script src="/assets/js/nav.js" defer></script>
+    {% include "../../_kit/styles/starter-styles-css.html" %}
+
+    <!-- For index.html, title should be what they do. Other pages, title should be page name -->
+    <title>
+      {% if page.url == '/' %}
+        {{ client.name }} | {{ title }} | {{ client.address.city }}, {{ client.address.county }}
+      {% else %}
+        {{ title }} | {{ client.name }}
+      {% endif %}
+    </title>
+  </head>
+  <body>
+    {% include "components/header.html" %}
+    <main id="main">
+      {% block content %}{% endblock %}
+    </main>
+    {% include "components/footer.html" %}
+  </body>
+</html>
