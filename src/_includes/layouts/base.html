@@ -7,11 +7,11 @@
     <title>The Stitch Starter Kit</title>
     <script src="/assets/js/nav.js" defer></script>
 
-    <!-- placeholder styles - merge or delete as per _kit instructions -->
-    {% include "../../_kit/styles/starter-styles.html" %}
-
-    <!-- anything that needs to be transferred to better-base.html goes below here -->
-
+    <link rel="stylesheet" href="/css/critical-styles.css"/>
+    <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'; this.onload=null;"/>
+    <noscript>
+      <link rel="stylesheet" href="/css/styles.css"/>
+    </noscript>
   </head>
   <body>
     {% include "components/header.html" %}
