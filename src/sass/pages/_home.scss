@@ -1,0 +1,30 @@
+@use '../utilities' as *;
+
+main {
+  min-height: 70vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    font-size: var(--titleFontSize);
+  }
+
+  h2 {
+    font-size: var(--headerFontSize);
+  }
+
+  h3 {
+    display: inline;
+    font-size: var(--subheaderFontSize);
+  }
+
+  ol {
+    list-style: decimal inside;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+}
