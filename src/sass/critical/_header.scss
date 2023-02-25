@@ -1,0 +1,309 @@
+@use '../utilities' as *;
+@use '../base/' as *;
+
+// Because of lots of overlapping styles, the mobile/desktop header is split
+// There's no shared logic, which works out to less overlap than using shared styles
+// The exceptions are the fonts and some of the skip-to-main link styles, found below:
+
+/*-- -------------------------- -->
+<---        Header Styles       -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0px) {
+  header {
+    font-family: var(--bodyFontFamily);
+
+    .skip-link {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 700;
+      padding: 0.5em 1em;
+      position: absolute;
+      transform: translateY(-500%);
+      transition: transform 0.3s;
+      z-index: 10;
+
+      &:focus {
+        transform: translateY(125%);
+      }
+    }
+  }
+}
+
+/*-- -------------------------- -->
+<---        Mobile Header       -->
+<--- -------------------------- -*/
+@media only screen and (max-width: 1023px) {
+  header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    z-index: 2;
+
+    .container {
+      position: relative;
+      padding: calc(24 / 16) * 1rem;
+      z-index: 3;
+    }
+
+    .left {
+      left: 1.5rem;
+    }
+
+    .logo {
+      display: inline-block;
+      height: 100%;
+      width: auto;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 0;
+      padding-top: 0;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background-color: #fff;
+      transition: width 0.3s;
+      z-index: 4;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: calc(36 / 16) * 1rem;
+      height: 100%;
+      padding-top: calc(96 / 16) * 1rem;
+      padding-bottom: calc(32 / 16) * 1rem;
+      padding-right: calc(24 / 16) * 1rem;
+    }
+
+    li {
+      opacity: 0;
+      text-align: right;
+      transform-style: preserve-3d;
+      transform: translateY(-7/16em) rotateX(00deg);
+      transition: opacity 0.5s, transform 0.5s;
+
+      &:nth-of-type(1) {
+        transition-delay: 0.1s;
+      }
+      &:nth-of-type(2) {
+        transition-delay: 0.2s;
+      }
+      &:nth-of-type(3) {
+        transition-delay: 0.3s;
+      }
+      &:nth-of-type(4) {
+        transition-delay: 0.4s;
+      }
+      &:nth-of-type(5) {
+        transition-delay: 0.5s;
+      }
+    }
+
+    a.active,
+    a:hover {
+      color: var(--primary);
+    }
+
+    #hamburger {
+      position: absolute;
+      top: 50%;
+      right: 0.5rem;
+      display: block;
+      border: none;
+      padding: 0;
+      height: calc(48 / 16) * 1rem;
+      width: calc(48 / 16) * 1rem;
+      background: transparent;
+      transform: translateY(-50%);
+      transition: top 0.3s;
+      z-index: 4;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        display: block;
+        left: 50%;
+        height: 2px;
+        width: calc(24 / 16) * 1rem;
+        background-color: #000;
+        transform: translateX(-50%);
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          left: 0;
+          height: 2px;
+          width: 100%;
+          background: #000;
+          opacity: 1;
+        }
+
+        &:before {
+          top: -6px;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.5s;
+        }
+
+        &:after {
+          top: 6px;
+          transition: width 0.3s, left 0.3s, top 0.3s, transform 0.3s;
+        }
+      }
+    }
+
+    #backdrop {
+      display: none;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.5);
+      height: 100vh;
+      width: 100vw;
+    }
+  }
+  body.open {
+    overflow-y: hidden;
+
+    header {
+      overflow-y: scroll;
+
+      #hamburger {
+        span {
+          background-color: transparent;
+          transition: background-color 0.3s;
+
+          &:before,
+          &:after {
+            top: 50%;
+            left: 50%;
+            width: 100%;
+          }
+
+          &:before {
+            transform: translate(-50%, -50%) rotate(225deg);
+          }
+
+          &:after {
+            transform: translate(-50%, -50%) rotate(-225deg);
+          }
+        }
+      }
+
+      nav {
+        width: calc(250 / 16) * 1rem;
+
+        ul {
+          overflow-y: scroll;
+          li {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+          }
+        }
+
+        &:before {
+          content: '';
+          width: 100vw;
+          height: 100vh;
+          position: absolute;
+          right: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          transition: 0;
+        }
+      }
+    }
+
+    &.scrolled {
+      background-color: grey;
+    }
+  }
+}
+
+/*-- -------------------------- -->
+<---       Desktop Header       -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 64em) {
+  header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: calc(112 / 16) * 1rem;
+    padding: 0;
+    transition: 0.3s;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: white;
+    z-index: 2;
+
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      max-width: 75rem;
+      margin: 0 auto;
+      padding: calc(32 / 16) * 1rem;
+    }
+
+    .skip-link {
+      left: 2rem;
+    }
+
+    .logo {
+      display: inline-block;
+      width: auto;
+      height: 100%;
+      margin-right: auto;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0;
+    }
+
+    li {
+      margin-left: calc(30 / 16) * 1rem;
+      padding-top: 0.1875em;
+      list-style: none;
+    }
+
+    a {
+      position: relative;
+      color: var(--bodyTextColor);
+      transition: color 0.3s ease;
+
+      &:hover,
+      &.active {
+        color: var(--primary);
+      }
+    }
+
+    #hamburger {
+      display: none;
+    }
+
+    &.scrolled {
+      background-color: grey;
+    }
+  }
+}
