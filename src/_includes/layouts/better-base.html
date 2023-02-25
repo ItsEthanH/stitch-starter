@@ -10,7 +10,7 @@
     <meta name="keywords" content=""/>
 
     <!-- display when sharing links -->
-    <meta property="og:title" content="{{ client.name }} | {{ title }} | {{ client.address.city }}, {{ client.address.county }}"/>
+    <meta property="og:title" content="{{ client.name }} | {{ title }} | {{ client.address.city }}, {{ client.address.state }}"/>
     <meta property="og:description" content="{{ description }}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://{{ client.domain }}{{ page.url }}"/>
@@ -26,7 +26,7 @@
     <!-- For index.html, title should be what they do. Other pages, title should be page name -->
     <title>
       {% if page.url == '/' %}
-        {{ client.name }} | {{ title }} | {{ client.address.city }}, {{ client.address.county }}
+        {{ client.name }} | {{ title }} | {{ client.address.city }}, {{ client.address.state }}
       {% else %}
         {{ title }} | {{ client.name }}
       {% endif %}
