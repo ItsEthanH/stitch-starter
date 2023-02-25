@@ -1,0 +1,207 @@
+/*-- -------------------------- -->
+<---          Footer            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0em) {
+  #footer {
+    font-family: var(--bodyFontFamily);
+    /* 60px - 100px top and bottom */
+    padding: clamp(3.75em, 7.82vw, 6.25em) 1em;
+    background-color: #1a1a1a;
+    /* Navigation Links */
+    /* Contact Links */
+  }
+  #footer .container {
+    width: 100%;
+    /* reset on tablet */
+    max-width: 34.375em;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    column-gap: 5.5em;
+    row-gap: 2em;
+  }
+  #footer .logo-group {
+    /* takes up all the space, lets the other ul's wrap below it */
+    width: 100%;
+    position: relative;
+  }
+  #footer .logo {
+    /* 210px - 240px */
+    width: clamp(13.125em, 8vw, 15em);
+    height: auto;
+    display: block;
+    /* 28px - 44px */
+    margin-bottom: clamp(1.75em, 4.17vw, 2.75em);
+  }
+  #footer .text {
+    /* 14px - 16px */
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    margin: 0;
+    width: 78%;
+    margin-bottom: 2em;
+    /* changes to 305px at desktop */
+    max-width: 33.75em;
+    color: var(--bodyTextColorWhite);
+  }
+  #footer .logo-img {
+    width: 100%;
+    height: auto;
+  }
+  #footer .logo-img.dark {
+    display: none;
+  }
+  #footer .social {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75em;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  #footer .social-link {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--primaryLight);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  #footer .social-link:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-0.1875rem);
+  }
+  #footer .social-img {
+    height: 0.8125em;
+    width: auto;
+    display: block;
+  }
+  #footer .nav {
+    padding: 0;
+    margin: 0;
+  }
+  #footer .nav-li {
+    list-style: none;
+    margin-bottom: 1em;
+  }
+  #footer .nav-li:last-of-type {
+    margin-bottom: 0;
+  }
+  #footer .header {
+    font-family: var(--headerFontFamily);
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 700;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+  }
+  #footer .header:after {
+    content: '';
+    width: 2rem;
+    height: 0.25rem;
+    margin: 1rem auto 1.5rem 0;
+    background: var(--primary);
+    opacity: 1;
+    position: relative;
+    display: block;
+  }
+  #footer .nav-link {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 1.5em;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+  }
+  #footer .nav-link:before {
+    /* underline */
+    content: '';
+    width: 0%;
+    height: 0.125em;
+    background: var(--bodyTextColorWhite);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: -0.125em;
+    left: 0;
+    transition: width 0.3s;
+  }
+  #footer .nav-link:hover:before {
+    width: 100%;
+  }
+  #footer .contact {
+    margin: 0;
+    padding: 0;
+    width: 35%;
+  }
+  #footer .contact-li {
+    list-style: none;
+    margin-bottom: 0em;
+  }
+  #footer .contact-li:last-of-type {
+    margin-bottom: 0;
+  }
+  #footer .contact-link {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 1.5em;
+    text-align: left;
+    color: var(--bodyTextColorWhite);
+    display: inline-block;
+  }
+  #footer .contact-link:hover {
+    text-decoration: underline;
+  }
+  #footer .address {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48em) {
+  #footer .container {
+    max-width: 80em;
+    row-gap: 0;
+  }
+  #footer .contact {
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: none;
+  }
+  #footer .contact-li {
+    margin: 0;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64em) {
+  #footer .container {
+    /* pushes all flex children to the top */
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  #footer .logo-group {
+    /* pushes everything to the right of it as far as possible in a flexbox */
+    margin-right: auto;
+    width: auto;
+    max-width: 19.0625em;
+  }
+  #footer .text {
+    width: 100%;
+  }
+  #footer .social {
+    flex-direction: row;
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+  #footer .contact {
+    width: auto;
+  }
+}
