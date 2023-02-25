@@ -1,0 +1,459 @@
+/*        CSS Reset - credited below         */
+/* ----------------------------------------- */
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/*             v2.0 | 20110126               */
+/*        License: none (public domain)      */
+/* ----------------------------------------- */
+@media only screen and (min-width: 0rem) {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+
+  body {
+    line-height: 1.5;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  blockquote,
+  q {
+    quotes: none;
+  }
+
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*- -------------------------- */
+/*-      Custom Properties     */
+/*- -------------------------- */
+:root {
+  --primary: #4e1717;
+  --primaryLight: #8f4e4e;
+  --secondary: #89796a;
+  --secondaryLight: #d6d0cc;
+  --headerColor: #252422;
+  --bodyTextColor: #252422;
+  --label: #252422;
+  --headerFontFamily: 'Arial Black';
+  --bodyFontFamily: 'Helvetica';
+  --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
+  --titleFontSize: clamp(2.43rem, 4.31vw, 3.82rem);
+  --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+  --subheaderFontSize: clamp(1.69rem, 2.44vw, 2.44rem);
+  --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+  --bodyFontSize: clamp(0.875rem, 2.5vw, 1rem);
+  --dark: #121212;
+  --medium: #282828;
+  --accent: #404040;
+  --bodyTextColorWhite: #fafbfc;
+}
+
+/*-- -------------------------- -->
+<---          Global            -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--bodyFontFamily);
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  button {
+    background: none;
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+/*-- -------------------------- -->
+<---           Header           -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  header {
+    font-family: var(--bodyFontFamily);
+  }
+  header .skip-link {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    position: absolute;
+    transform: translateY(-500%);
+    transition: transform 0.3s;
+    z-index: 10;
+  }
+  header .skip-link:focus {
+    transform: translateY(125%);
+  }
+}
+
+/*-- -------------------------- -->
+<---        Mobile Header       -->
+<--- -------------------------- -*/
+@media only screen and (max-width: 1023px) {
+  header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    z-index: 2;
+  }
+  header .container {
+    position: relative;
+    padding: 1.5rem;
+    z-index: 3;
+  }
+  header .left {
+    left: 1.5rem;
+  }
+  header .logo {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+  }
+  header .logo img {
+    width: auto;
+    height: 100%;
+  }
+  header nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    padding-top: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
+    transition: width 0.3s;
+    z-index: 4;
+  }
+  header ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    height: 100%;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    padding-right: 1.5rem;
+  }
+  header li {
+    opacity: 0;
+    text-align: right;
+    transform-style: preserve-3d;
+    transform: translateY(-7/16em) rotateX(0deg);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  header li:nth-of-type(1) {
+    transition-delay: 0.1s;
+  }
+  header li:nth-of-type(2) {
+    transition-delay: 0.2s;
+  }
+  header li:nth-of-type(3) {
+    transition-delay: 0.3s;
+  }
+  header li:nth-of-type(4) {
+    transition-delay: 0.4s;
+  }
+  header li:nth-of-type(5) {
+    transition-delay: 0.5s;
+  }
+  header a.active,
+  header a:hover {
+    color: var(--primary);
+  }
+  header #hamburger {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    display: block;
+    border: none;
+    padding: 0;
+    height: 3rem;
+    width: 3rem;
+    background: transparent;
+    transform: translateY(-50%);
+    transition: top 0.3s;
+    z-index: 4;
+    cursor: pointer;
+  }
+  header #hamburger span {
+    position: absolute;
+    display: block;
+    left: 50%;
+    height: 2px;
+    width: 1.5rem;
+    background-color: #000;
+    transform: translateX(-50%);
+  }
+  header #hamburger span:before,
+  header #hamburger span:after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #000;
+    opacity: 1;
+  }
+  header #hamburger span:before {
+    top: -6px;
+    transition: width 0.3s, left 0.3s, top 0.3s, transform 0.5s;
+  }
+  header #hamburger span:after {
+    top: 6px;
+    transition: width 0.3s, left 0.3s, top 0.3s, transform 0.3s;
+  }
+  header #backdrop {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+  }
+  body.open {
+    overflow-y: hidden;
+  }
+  body.open header {
+    overflow-y: scroll;
+  }
+  body.open header #hamburger span {
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+  body.open header #hamburger span:before,
+  body.open header #hamburger span:after {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+  }
+  body.open header #hamburger span:before {
+    transform: translate(-50%, -50%) rotate(225deg);
+  }
+  body.open header #hamburger span:after {
+    transform: translate(-50%, -50%) rotate(-225deg);
+  }
+  body.open header nav {
+    width: 15.625rem;
+  }
+  body.open header nav ul {
+    overflow-y: scroll;
+  }
+  body.open header nav ul li {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+  body.open header nav:before {
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    right: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0;
+  }
+  body.open.scrolled {
+    background-color: grey;
+  }
+}
+
+/*-- -------------------------- -->
+<---       Desktop Header       -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 64em) {
+  header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 7rem;
+    padding: 0;
+    transition: 0.3s;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: white;
+    z-index: 2;
+  }
+  header .container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  header .skip-link {
+    left: 2rem;
+  }
+  header .logo {
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    margin-right: auto;
+  }
+  header .logo img {
+    width: auto;
+    height: 100%;
+  }
+  header ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+  }
+  header li {
+    margin-left: 1.875rem;
+    padding-top: 0.1875em;
+    list-style: none;
+  }
+  header a {
+    position: relative;
+    color: var(--bodyTextColor);
+    transition: color 0.3s ease;
+  }
+  header a:hover,
+  header a.active {
+    color: var(--primary);
+  }
+  header #hamburger {
+    display: none;
+  }
+  header.scrolled {
+    background-color: grey;
+  }
+}
