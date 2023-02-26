@@ -1,8 +1,13 @@
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy('./src/assets');
-  eleventyConfig.addPassthroughCopy('./src/images'); // DELETE IF USING feature/image-optimisation
+  eleventyConfig.ignores.add('./src/_kit/**/*');
 
-  eleventyConfig.addWatchTarget('./src/assets/*');
+  eleventyConfig.addPassthroughCopy('./src/assets');
+  eleventyConfig.addPassthroughCopy('./src/images');
+
+  // trigger a reload on the following filetypes
+  eleventyConfig.setServerOptions({
+    watch: ['**/*.js', '**/*.css', '**/*.sass', '**/*.less'],
+  });
 
   return {
     // default is to use nunjucks to render everything - feel free to change this to whatever you want
