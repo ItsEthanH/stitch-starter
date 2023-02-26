@@ -3,6 +3,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('./src/assets');
   eleventyConfig.addPassthroughCopy('./src/images');
+  eleventyConfig.addPassthroughCopy('./src/css');
 
   // trigger a reload on the following filetypes
   eleventyConfig.setServerOptions({

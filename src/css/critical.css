@@ -4,7 +4,7 @@
 /*             v2.0 | 20110126               */
 /*        License: none (public domain)      */
 /* ----------------------------------------- */
-@media only screen and (min-width: 0rem) {
+@media only screen and (min-width: 0em) {
   html,
   body,
   div,
@@ -143,32 +143,35 @@
 /*- -------------------------- */
 /*-      Custom Properties     */
 /*- -------------------------- */
-:root {
-  --primary: #4e1717;
-  --primaryLight: #8f4e4e;
-  --secondary: #89796a;
-  --secondaryLight: #d6d0cc;
-  --headerColor: #252422;
-  --bodyTextColor: #252422;
-  --label: #252422;
-  --headerFontFamily: 'Arial Black';
-  --bodyFontFamily: 'Helvetica';
-  --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
-  --titleFontSize: clamp(2.43rem, 4.31vw, 3.82rem);
-  --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-  --subheaderFontSize: clamp(1.69rem, 2.44vw, 2.44rem);
-  --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-  --bodyFontSize: clamp(0.875rem, 2.5vw, 1rem);
-  --dark: #121212;
-  --medium: #282828;
-  --accent: #404040;
-  --bodyTextColorWhite: #fafbfc;
+
+@media only screen and (min-width: 0em) {
+  :root {
+    --primary: #4e1717;
+    --primaryLight: #8f4e4e;
+    --secondary: #89796a;
+    --secondaryLight: #d6d0cc;
+    --headerColor: #252422;
+    --bodyTextColor: #252422;
+    --label: #252422;
+    --headerFontFamily: 'Arial Black';
+    --bodyFontFamily: 'Helvetica';
+    --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
+    --titleFontSize: clamp(2.43rem, 4.31vw, 3.82rem);
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --subheaderFontSize: clamp(1.69rem, 2.44vw, 2.44rem);
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    --bodyFontSize: clamp(0.875rem, 2.5vw, 1rem);
+    --dark: #121212;
+    --medium: #282828;
+    --accent: #404040;
+    --bodyTextColorWhite: #fafbfc;
+  }
 }
 
 /*-- -------------------------- -->
 <---          Global            -->
 <--- -------------------------- -*/
-@media only screen and (min-width: 0rem) {
+@media only screen and (min-width: 0em) {
   *,
   *:before,
   *:after {
@@ -196,7 +199,7 @@
 /*-- -------------------------- -->
 <---           Header           -->
 <--- -------------------------- -*/
-@media only screen and (min-width: 0rem) {
+@media only screen and (min-width: 0em) {
   header {
     font-family: var(--bodyFontFamily);
   }
@@ -245,6 +248,7 @@
   header .logo img {
     width: auto;
     height: 100%;
+    max-width: 15rem;
   }
   header nav {
     position: fixed;
@@ -429,6 +433,7 @@
   header .logo img {
     width: auto;
     height: 100%;
+    max-width: 15rem;
   }
   header ul {
     display: flex;
