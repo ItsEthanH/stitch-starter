@@ -13,6 +13,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode('image', optimiseImage);
 
+  eleventyConfig.addShortcode('image', optimiseImage);
+
   return {
     // default is to use nunjucks to render everything - feel free to change this to whatever you want
     markdownTemplateEngine: 'njk',
