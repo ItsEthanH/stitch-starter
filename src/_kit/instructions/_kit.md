@@ -23,8 +23,9 @@ Remember - you can use one style/, one page/, and as many feature/ branches as y
 
 ### Step 2 - Handle conflicts
 
-If you're using more than one branch, there's a chance that merge issues will appear. As long as all unique content is
-merged into the kit, everything will work. Refer to the README.md file for more information
+There is also a styles folder, giving some starting styles for the header, footer and branch-specific features. You can
+either incorporate them into your existing styles, or just delete them. If you merge a style/ branch, the starter styles
+will be incorporated into that language's setup, so the starter-styles will be deleted.
 
 ### Step 3 - Run npm install
 
@@ -39,11 +40,8 @@ normal setup.
 
 ### Step 5 - Handle base.html
 
-If you're using a pages/ branch, you will see that there is a better-base.html (in the includes/layouts folder), which,
-as the name suggests, improves upon the base of your project. To account for the cases where a pages/ branch is not
-used, all import tags (script, link, includes etc) will be placed into the standard base.html. Placeholder styles should
-be handled as per the last step, while the script or stylesheet imports under the "transfer" section should be
-transferred to better-base.html
+If you're using one of Stitch Starter's style/ branches, the starter-styles are already included in the language you
+chose. Therefore, there is no starter-styles. There may be branch-specific styles that need handling, however.
 
 ### Step 6 - Delete this file and move onto the next!
 
