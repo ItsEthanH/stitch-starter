@@ -5,7 +5,7 @@
   /*             v2.0 | 20110126               */
   /*        License: none (public domain)      */
   /* ----------------------------------------- */
-  @media only screen and (min-width: 0em) {
+  @media only screen and (min-width: 0) {
     a,
     abbr,
     acronym,
@@ -153,7 +153,7 @@
   /*- -------------------------- */
   /*-      Custom Properties     */
   /*- -------------------------- */
-  @media only screen and (min-width: 0em) {
+  @media only screen and (min-width: 0) {
     :root {
       --primary: #14142b;
       --primaryLight: #4292f5;
@@ -183,17 +183,17 @@
       --headerScrolledColour: rgb(230, 230, 230);
     }
   }
-  /* due to the large amount of overlapping content, a separate mobile and desktop media query is used. it is more DRY to
-   do it this way than to overwrite all the conflicting styles. bear this in mind if you make modifications.
 
-   however, the skip link, anchor and font styles are shared for consistency. */
+  /* due to the large amount of overlapping content, a separate mobile and desktop media query is used. it is more DRY to
+   do it this way than to overwrite all the conflicting styles. bear this in mind if you make modifications. however, the
+   skip link, anchor and font styles are shared for consistency. */
 
   /*- -------------------------- */
   /*-           Header           */
   /*- -------------------------- */
 
   /* Shared Styles */
-  @media only screen and (min-width: 0em) {
+  @media only screen and (min-width: 0) {
     header {
       font-family: var(--bodyFontFamily);
     }
@@ -449,7 +449,7 @@
   /*- -------------------------- */
 
   /* Mobile - 360px */
-  @media only screen and (min-width: 0em) {
+  @media only screen and (min-width: 0) {
     #cs-footer {
       font-family: var(--bodyFontFamily);
       /* 40px - 100px top and bottom */
