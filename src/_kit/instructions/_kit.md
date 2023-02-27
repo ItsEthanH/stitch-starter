@@ -1,66 +1,50 @@
-# Overview - pages/9-pages
+# Overview - The Stitch Starter Kit
 
-The 9-pages branch comes with a centralised data directory, an improved base.html and some predefined pages with front
-matter all set up. They also incorporate the eleventyNavigation plugin to make it easier to add new pages, which make it
-possible to instantly create a dropdown just by defining so in the frontmatter. As long as the correct format in the
-front matter is followed, the base.html will adapt to that page, improving performance and SEO. All data in the \_data
-directory is accessible throughout the project, providing a central point of change across the website
+To make things as easy as possible, all temporary files for setting up the kit can be found in the kit directory. In
+here, you can find the instructions and temporary styles to help you get a project off the ground as quick as possible.
 
-<!--  -->
+Whenever you merge a branch, a markdown file for that branch will be put in kit/instructions, outlining how to use that
+branch. When all branches are merged, just go through the instruction files, follow them and delete them when you're
+done. When the folder is empty, you're ready to go!
 
-# Setting up the 9-pages branch
-
-### Step 1 - Incorporating Client Data
-
-Fill out the data/client.json file with the project information.
-
-- Name: Name of the business the website is for
-- Email: Main point of contact for the website
-- Phone: The most supported phone number format, for use in href="tel:"
-- Phone Formatted: The prettiest phone format, for display on the page
-- Address: For display on the website. Include a Google Map link for a clickable Address
-- Social: Boilerplate social media links
-- Domain: The domain the project will be hosted on upon completion
-
-### Step 2 - Transfering Necessary Imports
-
-In includes/base.html, bring everything under the transfer comment into better-base.html, to ensure all branches work
-correctly. Also transfer the contents of kit/styles/dropdown.html into your styling system
-
-## Step 3 - Adding New Pages
-
-Follow the front matter template for all new pages. Extend from layouts/better-base.html
-
-- title: Name of the page that will appear in base.html and the search results\
-- description: For the meta description tag\
-- preload: For above-fold images. Preload them for a performance boost\
-- permalink: Filepath for the page. Otherwise, it will render as /pages/page-slug\
-- eleventyNavigation:\
-  key: How you want the page to appear in the navigation\
-  parent: Define another page's key here to create a dropdown (as long as the dropdown styles are carried over)\
-  order: The order, from lowest to highest, that the pages will appear\
+There is also a styles folder, giving some starting styles for the header, footer and branch-specific features. To make
+it easier to get a project up and running, the styles are served with a Nunjucks "Includes". This stops the temporary
+styles from interfering with your normal stylesheets. If you decide to use a style/ branch, it will come pre-equipped
+with the starter-styles sheet incorporated into your language of choice. The branch-specific styles (CMS branch, 9-page
+branch, etc) should be transferred from kit/styles into your styling system, however.
 
 <!--  -->
 
-# OTHER USEFUL THINGS TO ADD TO better-base.html
+# Setting up the main branch
 
-### Favicons
+### Step 1 - Merge all branches you want to use with this kit
 
-Use https://realfavicongenerator.net. Best served in ./src/assets. You can also use the below code to account for
-light/dark browser themes
+Remember - you can use one style/, one page/, and as many feature/ branches as you want
 
-<link rel="icon" type="image/png" href="/assets/favicons/favicon-light-16x16.png" sizes="16x16" media="(prefers-color-scheme: light)" />
-<link rel="icon" type="image/png" href="/assets/favicons/favicon-light-32x32.png" sizes="32x32" media="(prefers-color-scheme: light)" />
-<link rel="icon" type="image/png" href="/assets/favicons/favicon-dark-16x16.png" sizes="16x16" media="(prefers-color-scheme: dark)" />
-<link rel="icon" type="image/png" href="/assets/favicons/favicon-dark-32x32.png" sizes="32x32" media="(prefers-color-scheme: dark)" />
+### Step 2 - Handle conflicts
 
-### Fonts
+If you're using more than one branch, there's a chance that merge issues will appear. As long as all unique content is
+merged into the kit, everything will work. Refer to the README.md file for more information
 
-Use https://gwfh.mranftl.com/fonts to self host fonts You can also use the below code to preload custom fonts
+### Step 3 - Run npm install
 
-<link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-regular.woff2" crossorigin/>
-<link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-700.woff2" crossorigin/>
+To prevent massive merge issues, there's no package-lock.json in the repo. This shouldn't cause an issue, however.
 
-### Preload Google Analytics
+### Step 4 - Handle kit/styles folder
 
-<link href="https://www.googletagmanager.com/gtag/js?id=YOUR-ID-HERE" rel="preload" as="script" />
+By standard, the main branch comes with some starting styles to give you a responsive header and footer. These are built
+into the style/ branches for you, so if you're using one of them, the starter-styles.html won't be present. Other
+branches may come with their own styles, which aren't included elsewhere, so these should be incorporated into your
+normal setup.
+
+### Step 5 - Handle base.html
+
+If you're using a pages/ branch, you will see that there is a better-base.html (in the includes/layouts folder), which,
+as the name suggests, improves upon the base of your project. To account for the cases where a pages/ branch is not
+used, all import tags (script, link, includes etc) will be placed into the standard base.html. Placeholder styles should
+be handled as per the last step, while the script or stylesheet imports under the "transfer" section should be
+transferred to better-base.html
+
+### Step 6 - Delete this file and move onto the next!
+
+With this, the foundations of the kit are set up. You can delete this .md file and move onto the next one.
