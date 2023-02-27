@@ -64,3 +64,12 @@ Use https://gwfh.mranftl.com/fonts to self host fonts You can also use the below
 ### Preload Google Analytics
 
 <link href="https://www.googletagmanager.com/gtag/js?id=YOUR-ID-HERE" rel="preload" as="script" />
+
+<!--  -->
+
+# Considerations with other branches
+
+### feature/cms
+
+The pages/posts and layouts/post files both use the base.html file as a layout. Be sure to use the better-base.html
+instead
