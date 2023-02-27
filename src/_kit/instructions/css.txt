@@ -1,1 +1,0 @@
-This branch sets up the project with a CSS folder for vanilla styling. The CSS files are split into 
