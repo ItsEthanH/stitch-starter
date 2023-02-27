@@ -10,8 +10,8 @@ done. When the folder is empty, you're ready to go!
 There is also a styles folder, giving some starting styles for the header, footer and branch-specific features. To make
 it easier to get a project up and running, the styles are served with a Nunjucks "Includes". This stops the temporary
 styles from interfering with your normal stylesheets. If you decide to use a style/ branch, it will come pre-equipped
-with the starter-styles sheet. The branch-specific styles (CMS branch, 9-page branch, etc) should be transferred from
-kit/styles into your styling system, however.
+with the starter-styles sheet incorporated into your language of choice. The branch-specific styles (CMS branch, 9-page
+branch, etc) should be transferred from kit/styles into your styling system, however.
 
 # Setting up the main branch
 
@@ -31,8 +31,9 @@ To prevent massive merge issues, there's no package-lock.json in the repo. This 
 ### Step 4 - Handle kit/styles folder
 
 By standard, the main branch comes with some starting styles to give you a responsive header and footer. These are built
-into the style/ branches for you, so if you're using one of them, the starter-styles.html can be deleted. Other branches
-may come with their own styles, which aren't included elsewhere, so these should be incorporated into your normal setup.
+into the style/ branches for you, so if you're using one of them, the starter-styles.html won't be present. Other
+branches may come with their own styles, which aren't included elsewhere, so these should be incorporated into your
+normal setup.
 
 ### Step 5 - Handle base.html
 
