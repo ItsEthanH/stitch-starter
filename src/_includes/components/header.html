@@ -15,27 +15,28 @@
       <ul>
         {% set navPages = collections.all | eleventyNavigation %}
         {%- for entry in navPages %}
-          <li>
-            <a {% if entry.url == page.url %} class="active" {% endif %} href="{{ entry.url }}"/>
-            {{ entry.key }}
+          <li {% if entry.children.length != 0 %} class="dropdown" {% endif %}>
+            <a href="{{ entry.url }}" {% if entry.url == page.url %} class="active" {% endif %}>
+              {{ entry.key }}
+            </a>
 
-            {% if entry.children %}
+            {% if entry.children.length != 0 %}
               <ul class="menu">
                 {% for child in entry.children %}
                   <li>
-                    <a {% if child.url == page.url %} class="active" {% endif %} href="{{ child.url }}"/>
-                    {{ child.key }}
+                    <a {% if child.url == page.url %} class="active" {% endif %} href="{{ child.url }}">
+                      {{ child.key }}
+                    </a>
                   </li>
                 {% endfor %}
               </ul>
             {% endif %}
-          </a>
-        </li>
-      {%- endfor %}
-    </ul>
-  </nav>
-  <button id="hamburger" aria-hidden="true">
-    <span></span>
-  </button>
-</div>
+          </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <button id="hamburger" aria-hidden="true">
+      <span></span>
+    </button>
+  </div>
 </header>

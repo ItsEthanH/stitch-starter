@@ -21,7 +21,8 @@
     <link rel="preload" as="image" href="/assets/images/{{ preload }}"/>
 
     <script src="/assets/js/nav.js" defer></script>
-
+    {% include "../../_kit/styles/starter-styles.html" %}
+    {% include "../../_kit/styles/dropdown.html" %}
     <!-- For index.html, title should be what they do. Other pages, title should be page name -->
     <title>
       {% if page.url == '/' %}

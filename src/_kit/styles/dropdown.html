@@ -1,0 +1,113 @@
+<style>
+
+  @media only screen and (min-width: 0) {
+    .dropdown a {
+      display: block;
+    }
+
+    .dropdown .menu {
+      display: block;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dropdown .menu li {
+      margin: 2.25rem 0;
+    }
+
+    .dropdown .menu li:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @media only screen and (min-width: 64em) {
+    .dropdown {
+      position: relative;
+      margin-right: 1.15rem;
+    }
+
+    .dropdown > a:after,
+    .dropdown > a:before {
+      content: '';
+      width: 0.5rem;
+      height: 0.125rem;
+      background: var(--bodyTextColor);
+      opacity: 1;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      top: 33%;
+      transition: transform 0.5s;
+    }
+
+    .dropdown > a:before {
+      right: -1.173rem;
+      transform: rotate(45deg);
+      transform-origin: left center;
+    }
+
+    .dropdown > a:after {
+      right: -1.3125rem;
+      transform: rotate(-45deg);
+      transform-origin: right center;
+    }
+
+    .dropdown .menu {
+      position: absolute;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
+      padding: 0.5rem 1rem;
+      top: 150%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+      max-width: 25ch;
+      text-align: center;
+      box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+      transform: rotateX(-90deg) translateX(-50%);
+      transform-origin: top center;
+      opacity: 0.3;
+      transition: 280ms all ease-out;
+    }
+
+    .dropdown .menu a {
+      display: block;
+      padding: 0.5rem;
+    }
+
+    .dropdown .menu li:first-of-type {
+      margin-top: 0;
+    }
+
+    .dropdown:focus-within .menu,
+    .dropdown:hover .menu {
+      opacity: 1;
+      transform: rotateX(0) translateX(-50%);
+      visibility: visible;
+    }
+
+    .dropdown:focus-within > a,
+    .dropdown:hover > a {
+      color: var(--primary);
+    }
+
+    .dropdown:focus-within > a:after,
+    .dropdown:focus-within > a:before,
+    .dropdown:hover > a:after,
+    .dropdown:hover > a:before {
+      top: 52%;
+      background: var(--primary);
+    }
+
+    .dropdown:focus-within > a:before,
+    .dropdown:hover > a:before {
+      transform: rotate(315deg);
+    }
+
+    .dropdown:focus-within > a:after,
+    .dropdown:hover > a:after {
+      transform: rotate(-315deg);
+    }
+  }
+</style>
