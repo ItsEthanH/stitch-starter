@@ -1,6 +1,6 @@
-# Overview - pages/9-pages
+# Overview - pages/5-pages
 
-The 9-pages branch comes with a centralised data directory, an improved base.html and some predefined pages with front
+The 5-pages branch comes with a centralised data directory, an improved base.html and some predefined pages with front
 matter all set up. They also incorporate the eleventyNavigation plugin to make it easier to add new pages. As long as
 the correct format in the front matter is followed, the base.html will adapt to that page, improving performance and
 SEO. All data in the \_data directory is accessible throughout the project, providing a central point of change across
@@ -8,7 +8,7 @@ the website
 
 <!--  -->
 
-# Setting up the 9-pages branch
+# Setting up the 5-pages branch
 
 ### Step 1 - Incorporating Client Data
 
