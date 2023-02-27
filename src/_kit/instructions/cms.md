@@ -1,8 +1,25 @@
-This module adds Netlify CMS to the project. By default, it's set up in a blog-style format however, this can be expanded for a whole
-range of use cases, including menus, vacancy boards or anything which would require modification from a non-technical client.
+# Overview - feature/cms
 
-To prevent clashes while merging branches, there's no link in the navigation to the posts page. You can visit it at localhost:8080/posts,
-where we have provided three example posts to demonstrate the use of the CMS. You can access the CMS at localhost:8080/admin.
+This module adds Netlify CMS to the project. By default, it's set up in a blog-style format however, this can be
+expanded for a whole range of use cases, including menus, vacancy boards or anything which would require modification
+from a non-technical client. The admin panel can be accessed via the /admin route, with the posts controlled by the CMS
+accessible by the /posts route. All setup for the CMS is controlled by the admin/config.yaml file. Consult the NetlfyCMS
+Docs for more information
 
-1. Add link to /posts to the header.
-    - If you're using a /pages branch, add the front matter template to the posts page.
+<!--  -->
+
+# Setting up feature/cms
+
+### Step 1 - Add link to /posts to the header.
+
+To keep the project open to a range of branch combinations, there's no link to the posts page in the navigation. Either
+add this manually or, if you're using a pages/ branch, add the frontmatter to the pages/posts.html file.
+
+<!--  -->
+
+# Considerations with other branches
+
+### pages/
+
+If you're choose to use the better-base.html file, make sure this is defined in pages/posts.html and
+includes/layouts/post.html. Also make sure to add the frontmatter to the posts.html file.
