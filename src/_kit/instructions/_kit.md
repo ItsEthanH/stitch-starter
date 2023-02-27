@@ -13,6 +13,8 @@ styles from interfering with your normal stylesheets. If you decide to use a sty
 with the starter-styles sheet incorporated into your language of choice. The branch-specific styles (CMS branch, 9-page
 branch, etc) should be transferred from kit/styles into your styling system, however.
 
+<!--  -->
+
 # Setting up the main branch
 
 ### Step 1 - Merge all branches you want to use with this kit
