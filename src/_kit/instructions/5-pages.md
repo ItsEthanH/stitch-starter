@@ -1,10 +1,10 @@
 # Overview - pages/9-pages
 
 The 9-pages branch comes with a centralised data directory, an improved base.html and some predefined pages with front
-matter all set up. They also incorporate the eleventyNavigation plugin to make it easier to add new pages, which make it
-possible to instantly create a dropdown just by defining so in the frontmatter. As long as the correct format in the
-front matter is followed, the base.html will adapt to that page, improving performance and SEO. All data in the \_data
-directory is accessible throughout the project, providing a central point of change across the website
+matter all set up. They also incorporate the eleventyNavigation plugin to make it easier to add new pages. As long as
+the correct format in the front matter is followed, the base.html will adapt to that page, improving performance and
+SEO. All data in the \_data directory is accessible throughout the project, providing a central point of change across
+the website
 
 <!--  -->
 
@@ -37,7 +37,6 @@ Follow the front matter template for all new pages. Extend from layouts/better-b
 - permalink: Filepath for the page. Otherwise, it will render as /pages/page-slug\
 - eleventyNavigation:\
   key: How you want the page to appear in the navigation\
-  parent: Define another page's key here to create a dropdown (as long as the dropdown styles are carried over)\
   order: The order, from lowest to highest, that the pages will appear\
 
 <!--  -->
@@ -64,3 +63,12 @@ Use https://gwfh.mranftl.com/fonts to self host fonts You can also use the below
 ### Preload Google Analytics
 
 <link href="https://www.googletagmanager.com/gtag/js?id=YOUR-ID-HERE" rel="preload" as="script" />
+
+<!--  -->
+
+# Considerations with other branches
+
+### feature/cms
+
+The pages/posts and layouts/post files both use the base.html file as a layout. Be sure to use the better-base.html
+instead
