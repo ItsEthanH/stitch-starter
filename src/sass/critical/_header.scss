@@ -113,7 +113,7 @@
 
     a.active,
     a:hover {
-      color: var(--primary);
+      color: var(--primaryLight);
     }
 
     #hamburger {
@@ -295,7 +295,7 @@
 
       &:hover,
       &.active {
-        color: var(--primary);
+        color: var(--primaryLight);
       }
     }
 
