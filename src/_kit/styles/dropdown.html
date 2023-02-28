@@ -58,7 +58,7 @@
       border-radius: 4px;
       box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
       padding: 0.5rem 1rem;
-      top: 150%;
+      top: 100%;
       left: 50%;
       transform: translateX(-50%);
       width: max-content;
@@ -76,8 +76,19 @@
       padding: 0.5rem;
     }
 
+    .dropdown .menu li {
+      margin: 1rem 0;
+    }
+
     .dropdown .menu li:first-of-type {
       margin-top: 0;
+    }
+    li.dropdown {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      padding-bottom: 1em;
+      margin-bottom: -1em;
     }
 
     .dropdown:focus-within .menu,
