@@ -24,6 +24,12 @@
       }
     }
 
+    .logo img {
+      width: auto;
+      height: 100%;
+      max-width: 14rem;
+    }
+
     .skip-link {
       background: var(--primaryLight);
       color: #fff;
@@ -69,11 +75,6 @@
       display: inline-block;
       height: 100%;
       width: auto;
-
-      img {
-        width: auto;
-        height: 100%;
-      }
     }
 
     nav {
@@ -274,12 +275,6 @@
       width: auto;
       height: 100%;
       margin-right: auto;
-
-      img {
-        width: auto;
-        height: 100%;
-        max-width: 14rem;
-      }
     }
 
     ul {
