@@ -1,0 +1,28 @@
+:root {
+  --primary: #14142b;
+  --primaryLight: #4292f5;
+
+  --secondary: #89796a;
+  --secondaryLight: #d6d0cc;
+
+  --headerColor: #252422;
+  --bodyTextColor: #000;
+  --label: #b4b2c7;
+
+  --headerFontFamily: 'Arial Black';
+  --bodyFontFamily: 'Roboto', 'Arial', sans-serif;
+
+  --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
+  --titleFontSize: clamp(2.43rem, 4.31vw, 3.82rem);
+  --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+  --subheaderFontSize: clamp(1.69rem, 2.44vw, 2.44rem);
+  --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+  --bodyFontSize: clamp(0.875rem, 2.5vw, 1rem);
+
+  --dark: #121212;
+  --medium: #282828;
+  --accent: #404040;
+  --bodyTextColorWhite: #fafbfc;
+
+  --headerScrolledColour: rgb(230, 230, 230);
+}
