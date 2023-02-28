@@ -8,12 +8,24 @@
 /*-- -------------------------- -->
 <---        Header Styles       -->
 <--- -------------------------- -*/
-@media only screen and (min-width: 0px) {
+@media only screen and (min-width: 0em) {
   header {
     font-family: var(--bodyFontFamily);
+    transition: background-color 0.5s ease;
+
+    a {
+      position: relative;
+      color: var(--bodyTextColor);
+      text-decoration: none;
+
+      &.active,
+      &:hover {
+        color: var(--primaryLight);
+      }
+    }
 
     .skip-link {
-      background: var(--primary);
+      background: var(--primaryLight);
       color: #fff;
       border-radius: 999px;
       font-weight: 700;
@@ -22,10 +34,10 @@
       transform: translateY(-500%);
       transition: transform 0.3s;
       z-index: 10;
+    }
 
-      &:focus {
-        transform: translateY(125%);
-      }
+    .skip-link:focus {
+      transform: translateY(125%);
     }
   }
 }
@@ -109,11 +121,6 @@
       &:nth-of-type(5) {
         transition-delay: 0.5s;
       }
-    }
-
-    a.active,
-    a:hover {
-      color: var(--primaryLight);
     }
 
     #hamburger {
@@ -286,17 +293,6 @@
       margin-left: calc(30 / 16) * 1rem;
       padding-top: 0.1875em;
       list-style: none;
-    }
-
-    a {
-      position: relative;
-      color: var(--bodyTextColor);
-      transition: color 0.3s ease;
-
-      &:hover,
-      &.active {
-        color: var(--primaryLight);
-      }
     }
 
     #hamburger {
