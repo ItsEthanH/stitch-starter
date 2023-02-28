@@ -209,9 +209,19 @@
 @media only screen and (min-width: 0em) {
   header {
     font-family: var(--bodyFontFamily);
+    transition: background-color 0.5s ease;
+  }
+  header a {
+    position: relative;
+    color: var(--bodyTextColor);
+    text-decoration: none;
+  }
+  header a.active,
+  header a:hover {
+    color: var(--primaryLight);
   }
   header .skip-link {
-    background: var(--primary);
+    background: var(--primaryLight);
     color: #fff;
     border-radius: 999px;
     font-weight: 700;
@@ -299,10 +309,6 @@
   }
   header li:nth-of-type(5) {
     transition-delay: 0.5s;
-  }
-  header a.active,
-  header a:hover {
-    color: var(--primaryLight);
   }
   header #hamburger {
     position: absolute;
@@ -453,19 +459,11 @@
     padding-top: 0.1875em;
     list-style: none;
   }
-  header a {
-    position: relative;
-    color: var(--bodyTextColor);
-    transition: color 0.3s ease;
-  }
-  header a:hover,
-  header a.active {
-    color: var(--primaryLight);
-  }
   header #hamburger {
     display: none;
   }
   header.scrolled {
     background-color: var(--headerScrolledColour);
+    transition: background-color 0.5s ease-out;
   }
 }
