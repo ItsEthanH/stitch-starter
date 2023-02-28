@@ -302,7 +302,7 @@
   }
   header a.active,
   header a:hover {
-    color: var(--primary);
+    color: var(--primaryLight);
   }
   header #hamburger {
     position: absolute;
@@ -460,7 +460,7 @@
   }
   header a:hover,
   header a.active {
-    color: var(--primary);
+    color: var(--primaryLight);
   }
   header #hamburger {
     display: none;
