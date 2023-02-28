@@ -396,7 +396,7 @@
     transition: 0;
   }
   body.open.scrolled {
-    background-color: grey;
+    background-color: var(--headerScrolledColour);
   }
 }
 
@@ -466,6 +466,6 @@
     display: none;
   }
   header.scrolled {
-    background-color: grey;
+    background-color: var(--headerScrolledColour);
   }
 }
