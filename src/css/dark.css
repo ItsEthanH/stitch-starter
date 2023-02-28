@@ -1,0 +1,100 @@
+/*-- -------------------------- -->
+<---  Dark Mode Toggle Button   -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #dark-mode-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3.75rem;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+  }
+  #dark-mode-toggle img,
+  #dark-mode-toggle svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  #dark-mode-toggle img {
+    width: 1.5625rem;
+    height: 1.5625rem;
+  }
+  #dark-mode-toggle .moon {
+    transition: transform 0.3s, opacity 0.3s, fill 0.3s;
+    fill: #000;
+  }
+  #dark-mode-toggle .sun {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  #dark-mode-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-left: 1.875em;
+    margin-bottom: 0em;
+  }
+}
+/*-- -------------------------- -->
+<---          Dark Mode         -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0em) {
+  body.dark-mode {
+    background: var(--medium);
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode header {
+    background: var(--dark);
+    box-shadow: var(--accent) 0px 8px 24px;
+  }
+  body.dark-mode header .logo .light {
+    display: none;
+  }
+  body.dark-mode header .logo .dark {
+    display: block;
+  }
+  body.dark-mode header a {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode header a.active,
+  body.dark-mode header a:hover {
+    color: var(--primaryLight);
+  }
+  body.dark-mode header nav {
+    background: var(--dark);
+  }
+  body.dark-mode header #dark-mode-toggle .sun {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  body.dark-mode header #dark-mode-toggle .moon {
+    transform: translate(-50%, -150%);
+    opacity: 0;
+  }
+  body.dark-mode header #hamburger span,
+  body.dark-mode header #hamburger span:before,
+  body.dark-mode header #hamburger span:after {
+    background-color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #footer {
+    background-color: var(--dark);
+  }
+}
+@media only screen and (min-width: 64em) {
+  body.dark-mode header nav {
+    background-color: transparent;
+  }
+}

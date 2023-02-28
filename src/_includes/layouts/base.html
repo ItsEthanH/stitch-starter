@@ -7,10 +7,12 @@
     <title>The Stitch Starter Kit</title>
     <script src="/assets/js/nav.js" defer></script>
 
-    <!-- placeholder styles - merge or delete as per _kit instructions -->
-    {% include "../../_kit/styles/starter-styles.html" %}
-
     <!-- anything that needs to be transferred to better-base.html goes below here -->
+    <script src="/assets/js/dark.js" defer></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/critical.css">
+    <link rel="stylesheet" href="/css/dark.css">
+    {% block stylesheet %}{% endblock %}
 
   </head>
   <body>
