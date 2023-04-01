@@ -342,11 +342,9 @@
     body.open {
       overflow-y: hidden;
     }
-    body.open header {
-      overflow-y: scroll;
-    }
     body.open header #hamburger span {
-      background-color: transparent;
+      visibility: hidden;
+      background-color: rgba(0, 0, 0, 0);
       transition: background-color 0.3s;
     }
     body.open header #hamburger span:after,
@@ -354,6 +352,7 @@
       top: 50%;
       left: 50%;
       width: 100%;
+      visibility: initial;
     }
     body.open header #hamburger span:before {
       transform: translate(-50%, -50%) rotate(225deg);
