@@ -1,10 +1,7 @@
-/*        CSS Reset - credited below         */
-/* ----------------------------------------- */
-/* http://meyerweb.com/eric/tools/css/reset/ */
-/*             v2.0 | 20110126               */
-/*        License: none (public domain)      */
-/* ----------------------------------------- */
-@media only screen and (min-width: 0em) {
+/*-- -------------------------- -->
+<---           Reset            -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0) {
   html,
   body,
   div,
@@ -91,8 +88,6 @@
     font: inherit;
     vertical-align: baseline;
   }
-
-  /* HTML5 display-role reset for older browsers */
   article,
   aside,
   details,
@@ -106,21 +101,17 @@
   section {
     display: block;
   }
-
   body {
     line-height: 1.5;
   }
-
   ol,
   ul {
     list-style: none;
   }
-
   blockquote,
   q {
     quotes: none;
   }
-
   blockquote:before,
   blockquote:after,
   q:before,
@@ -128,57 +119,14 @@
     content: '';
     content: none;
   }
-
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
-
   img {
     width: 100%;
     height: auto;
   }
-}
-
-/*- -------------------------- */
-/*-      Custom Properties     */
-/*- -------------------------- */
-
-@media only screen and (min-width: 0em) {
-  :root {
-    --primary: #14142b;
-    --primaryLight: #4292f5;
-
-    --secondary: #89796a;
-    --secondaryLight: #d6d0cc;
-
-    --headerColor: #252422;
-    --bodyTextColor: #000;
-    --label: #b4b2c7;
-
-    --headerFontFamily: 'Arial Black';
-    --bodyFontFamily: 'Roboto', 'Arial', sans-serif;
-
-    --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
-    --titleFontSize: clamp(2.43rem, 4.31vw, 3.82rem);
-    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-    --subheaderFontSize: clamp(1.69rem, 2.44vw, 2.44rem);
-    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-    --bodyFontSize: clamp(0.875rem, 2.5vw, 1rem);
-
-    --dark: #121212;
-    --medium: #282828;
-    --accent: #404040;
-    --bodyTextColorWhite: #fafbfc;
-
-    --headerScrolledColour: rgb(230, 230, 230);
-  }
-}
-
-/*-- -------------------------- -->
-<---          Global            -->
-<--- -------------------------- -*/
-@media only screen and (min-width: 0em) {
   *,
   *:before,
   *:after {
@@ -187,16 +135,13 @@
     padding: 0;
     font-family: var(--bodyFontFamily);
   }
-
   body {
     overflow-x: hidden;
   }
-
   button {
     background: none;
     border: none;
   }
-
   a {
     text-decoration: none;
     color: inherit;
@@ -204,20 +149,40 @@
 }
 
 /*-- -------------------------- -->
-<---           Header           -->
+<---      Custom Properties     -->
 <--- -------------------------- -*/
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0) {
+  :root {
+    --primary: #14142b;
+    --primaryLight: #4292f5;
+    --secondary: #89796a;
+    --secondaryLight: #d6d0cc;
+    --headerColor: #252422;
+    --bodyTextColor: #000;
+    --label: #b4b2c7;
+    --headerFontFamily: 'Arial Black';
+    --bodyFontFamily: 'Roboto', 'Arial', sans-serif;
+    --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
+    --titleFontSize: clamp(2.43rem, 4.31vw, 3.82rem);
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --subheaderFontSize: clamp(1.69rem, 2.44vw, 2.44rem);
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    --bodyFontSize: clamp(0.875rem, 2.5vw, 1rem);
+    --dark: #121212;
+    --medium: #282828;
+    --accent: #404040;
+    --bodyTextColorWhite: #fafbfc;
+    --headerScrolledColour: rgb(230, 230, 230);
+  }
+}
+/*-- -------------------------- -->
+<---    Shared Header Styles    -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0) {
   header {
     font-family: var(--bodyFontFamily);
-    transition: background-color 0.5s ease;
-  }
-  header .logo img {
-    width: auto;
-    height: 100%;
-    max-width: 14rem;
   }
   header a {
-    position: relative;
     color: var(--bodyTextColor);
     text-decoration: none;
   }
@@ -240,7 +205,6 @@
     transform: translateY(125%);
   }
 }
-
 /*-- -------------------------- -->
 <---        Mobile Header       -->
 <--- -------------------------- -*/
@@ -250,8 +214,8 @@
     top: 0;
     width: 100%;
     height: auto;
-    background: white;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
     z-index: 2;
   }
   header .container {
@@ -266,6 +230,7 @@
     display: inline-block;
     height: 100%;
     width: auto;
+    max-width: 14rem;
   }
   header nav {
     position: fixed;
@@ -274,7 +239,7 @@
     height: 100%;
     width: 0;
     padding-top: 0;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
     background-color: #fff;
     transition: width 0.3s;
     z-index: 4;
@@ -319,7 +284,7 @@
     padding: 0;
     height: 3rem;
     width: 3rem;
-    background: transparent;
+    background: rgba(0, 0, 0, 0);
     transform: translateY(-50%);
     transition: top 0.3s;
     z-index: 4;
@@ -334,8 +299,8 @@
     background-color: #000;
     transform: translateX(-50%);
   }
-  header #hamburger span:before,
-  header #hamburger span:after {
+  header #hamburger span:after,
+  header #hamburger span:before {
     content: '';
     position: absolute;
     display: block;
@@ -363,20 +328,22 @@
   body.open {
     overflow-y: hidden;
   }
-  body.open header {
-    overflow-y: scroll;
-  }
   body.open header #hamburger span {
-    background-color: transparent;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0);
     transition: background-color 0.3s;
   }
-  body.open header #hamburger span:before,
   body.open header #hamburger span:after {
     top: 50%;
     left: 50%;
     width: 100%;
+    visibility: initial;
   }
   body.open header #hamburger span:before {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    visibility: initial;
     transform: translate(-50%, -50%) rotate(225deg);
   }
   body.open header #hamburger span:after {
@@ -401,11 +368,7 @@
     background: rgba(0, 0, 0, 0.5);
     transition: 0;
   }
-  body.open.scrolled {
-    background-color: var(--headerScrolledColour);
-  }
 }
-
 /*-- -------------------------- -->
 <---       Desktop Header       -->
 <--- -------------------------- -*/
@@ -420,8 +383,8 @@
     height: 7rem;
     padding: 0;
     transition: 0.3s;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    background: #fff;
     z-index: 2;
   }
   header .container {
@@ -441,6 +404,7 @@
     display: inline-block;
     width: auto;
     height: 100%;
+    max-width: 14rem;
     margin-right: auto;
   }
   header ul {
@@ -454,11 +418,11 @@
     padding-top: 0.1875em;
     list-style: none;
   }
+  header a {
+    position: relative;
+    transition: color 0.3s ease;
+  }
   header #hamburger {
     display: none;
-  }
-  header.scrolled {
-    background-color: var(--headerScrolledColour);
-    transition: background-color 0.5s ease-out;
   }
 }
