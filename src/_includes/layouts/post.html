@@ -1,9 +1,9 @@
-<!-- REQUIREMENT - pages -->
-
 {% extends "layouts/base.html" %}
 {% block content %}
   <h2>{{ postTitle }}</h2>
-  <p>{{ author }} | {{ date }}</p>
+  <p>{{ author }}
+    |
+    {{ date }}</p>
   <img src="{{image}}" alt="{{imageAlt}}">
   {{ content | safe }}
 {% endblock %}
