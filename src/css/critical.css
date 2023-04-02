@@ -190,6 +190,12 @@
   header a:hover {
     color: var(--primaryLight);
   }
+  header .logo .light {
+    display: block;
+  }
+  header .logo .dark {
+    display: none;
+  }
   header .skip-link {
     background: var(--primaryLight);
     color: #fff;
