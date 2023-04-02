@@ -20,6 +20,15 @@
       }
     }
 
+    .logo {
+      .light {
+        display: block;
+      }
+      .dark {
+        display: none;
+      }
+    }
+
     .skip-link {
       background: var(--primaryLight);
       color: #fff;
