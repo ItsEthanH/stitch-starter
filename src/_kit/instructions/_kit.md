@@ -33,7 +33,7 @@ To prevent massive merge issues, there's no package-lock.json in the repo. This 
 ### Step 4 - Handle kit/styles folder
 
 By standard, the main branch comes with some starting styles to give you a responsive header and footer. These are built
-into the style/ branches for you, so if you're using one of them, the starter-styles.html won't be present. Other
+into the style/ branches for you, so if you're using one of them, you can delete the starter-styles.html file. Other
 branches may come with their own styles, which aren't included elsewhere, so these should be incorporated into your
 normal setup.
 
